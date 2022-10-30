@@ -1,6 +1,6 @@
 import { Stack, Button } from '@chakra-ui/react';
 
-const SignUpButton = () => {
+const SignUpButton = (props) => {
   return (
     <Stack pt={2} spacing={10}>
       <Button
@@ -10,6 +10,7 @@ const SignUpButton = () => {
           bg: '#015af2',
         }}
         loadingText='Signing Up'
+        onClick={() => props.handleSubmit()}
         size='lg'
       >
         Sign up

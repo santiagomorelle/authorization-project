@@ -11,14 +11,18 @@ import {
 
 import { ViewIcon, ViewOffIcon } from '@chakra-ui/icons';
 
-const PasswordField = () => {
+const PasswordField = (props) => {
   const [showPassword, setShowPassword] = useState(false);
 
   return (
-    <FormControl isRequired>
+    <FormControl id='password_field' isRequired>
       <FormLabel>Password</FormLabel>
       <InputGroup>
-        <Input type={showPassword ? 'text' : 'password'} />
+        <Input
+          name='password'
+          onChange={(e) => props.handleChange(e)}
+          type={showPassword ? 'text' : 'password'}
+        />
         <InputRightElement h='full'>
           <Button
             onClick={() => setShowPassword((showPassword) => !showPassword)}
