@@ -10,7 +10,7 @@ const firebaseErrors = [
   },
   {
     code: AuthErrorCodes.INVALID_EMAIL,
-    message: "Don't forget to include the '@'.",
+    message: 'Invalid email address.',
   },
   {
     code: AuthErrorCodes.WEAK_PASSWORD,
