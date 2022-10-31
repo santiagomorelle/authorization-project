@@ -4,7 +4,7 @@ const LoginButton = () => {
   return (
     <Stack pt={6}>
       <Text align='center'>
-        Already a user? <Link color='#1b8fff'>Login</Link>
+        Already a user? <Link color='#804BF2'>Login</Link>
       </Text>
     </Stack>
   );
