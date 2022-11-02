@@ -4,10 +4,10 @@ const SignUpButton = (props) => {
   return (
     <Stack pt={2} spacing={10}>
       <Button
-        bg='#804BF2'
+        bg='#a048fcfe'
         color='white'
         _hover={{
-          bg: '#CC44F2',
+          bg: '#ca44f8fb',
         }}
         loadingText='Signing Up'
         onClick={() => props.handleSubmit()}
