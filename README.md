@@ -59,8 +59,8 @@ To get a local copy up and running follow these simple steps:
 
 - [X] Sign Up form with Firebase and custom validations.
 
-- [ ] Email Verification feature (in progress)
+- [X] Sign In form.
 
 - [ ] Unit Tests (in progress)
 
-- [ ] Sign In form (soon)
+
