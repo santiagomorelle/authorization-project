@@ -1,22 +1,22 @@
 import { useState } from 'react';
 
+import toast, { Toaster } from 'react-hot-toast';
+
 import { Flex, useColorModeValue, Stack, Box } from '@chakra-ui/react';
 
-import SignUpHeader from './SignUpHeader';
-import FormField from './FormField';
+import Header from './Header';
+import EmailField from './EmailField';
 import PasswordField from './PasswordField';
-import SignUpButton from './SignUpButton';
-import LoginButton from './LoginButton';
+import SignButton from './SignButton';
+import LoginButton from './SignInLink';
 
-import { validateNotEmpty } from '../utils/validations';
-
-import toast, { Toaster } from 'react-hot-toast';
+import { validateCredentials } from '../utils/validations';
 
 import { createUser } from '../api/auth';
 
 import { handleError } from '../firebase/errors';
 
-const SignUpCard = () => {
+const SignCard = () => {
   const [user, setUser] = useState({ email: '', password: '' });
 
   const handleInputChange = (e) => {
@@ -26,15 +26,16 @@ const SignUpCard = () => {
     });
   };
 
-  const handleSubmit = async () => {
-    if (validateNotEmpty(user)) {
+  const handleSignUp = async () => {
+    const validationStatus = validateCredentials(user);
+    if (validationStatus == true) {
       toast.promise(createUser(user), {
         loading: 'Your account is being created...',
         success: 'Your account has been created!',
         error: (error) => handleError(error.code),
       });
     } else {
-      toast.error('Email address or password is empty.');
+      toast.error(validationStatus);
     }
   };
 
@@ -48,7 +49,7 @@ const SignUpCard = () => {
         minH='100vh'
       >
         <Stack maxW='lg' mx='auto' px={6} py={12} spacing={8}>
-          <SignUpHeader />
+          <Header />
           <Box
             bg={useColorModeValue('white', 'gray.700')}
             boxShadow='lg'
@@ -56,19 +57,9 @@ const SignUpCard = () => {
             rounded='lg'
           >
             <Stack spacing={4}>
-              <Box>
-                <FormField
-                  handleChange={handleInputChange}
-                  id='email_field'
-                  isRequired={true}
-                  label='Email Address'
-                  name='email'
-                  placeholder='Your email address'
-                  type='email'
-                />
-              </Box>
+              <EmailField handleChange={handleInputChange} />
               <PasswordField handleChange={handleInputChange} />
-              <SignUpButton handleSubmit={handleSubmit} />
+              <SignButton handleSubmit={handleSignUp} text='Sign up' />
               <LoginButton />
             </Stack>
           </Box>
@@ -78,4 +69,4 @@ const SignUpCard = () => {
   );
 };
 
-export default SignUpCard;
+export default SignCard;

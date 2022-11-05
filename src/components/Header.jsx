@@ -1,6 +1,6 @@
 import { Heading, Box, Image } from '@chakra-ui/react';
 
-const SignUpHeader = () => {
+const Header = () => {
   return (
     <Heading>
       <Box align='center'>
@@ -10,4 +10,4 @@ const SignUpHeader = () => {
   );
 };
 
-export default SignUpHeader;
+export default Header;

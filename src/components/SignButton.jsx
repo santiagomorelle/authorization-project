@@ -1,6 +1,6 @@
 import { Stack, Button } from '@chakra-ui/react';
 
-const SignUpButton = (props) => {
+const SignButton = (props) => {
   return (
     <Stack pt={2} spacing={10}>
       <Button
@@ -9,14 +9,13 @@ const SignUpButton = (props) => {
         _hover={{
           bg: '#ca44f8fb',
         }}
-        loadingText='Signing Up'
         onClick={() => props.handleSubmit()}
         size='lg'
       >
-        Sign up
+        {props.text}
       </Button>
     </Stack>
   );
 };
 
-export default SignUpButton;
+export default SignButton;

@@ -1,9 +1,9 @@
-import SignUpCard from './components/SignUpCard';
+import SignCard from './components/SignCard';
 
 const App = () => {
   return (
     <>
-      <SignUpCard />
+      <SignCard />
     </>
   );
 };
