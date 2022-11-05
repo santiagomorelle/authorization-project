@@ -1,6 +1,6 @@
 <div align="center">
    <a href="https://github.com/santiagomorelle/auth-project/tree/dev">
-   <img alt='Logo' src="./public/logo.png" width='150px'/>
+   <img alt='Logo' src="./public/sign-up.png" width='150px'/>
    </a>
    <h3 align="center">Authorization Project</h3>
    <p align="center">
