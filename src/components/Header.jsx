@@ -1,10 +1,10 @@
 import { Heading, Box, Image } from '@chakra-ui/react';
 
-const Header = () => {
+const Header = (props) => {
   return (
     <Heading>
       <Box align='center'>
-        <Image alt='Logo' boxSize='35%' src='logo.png' />
+        <Image alt={props.alt} boxSize='35%' src={props.src} />
       </Box>
     </Heading>
   );

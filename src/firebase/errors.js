@@ -6,14 +6,22 @@ export const handleError = (errorCode) =>
 const firebaseErrors = [
   {
     code: AuthErrorCodes.EMAIL_EXISTS,
-    message: 'This email is already in use.',
+    message: 'The email is already in use.',
   },
   {
     code: AuthErrorCodes.INVALID_EMAIL,
-    message: 'Invalid email address.',
+    message: 'Invalid email.',
+  },
+  {
+    code: AuthErrorCodes.INVALID_PASSWORD,
+    message: 'Invalid password.',
+  },
+  {
+    code: AuthErrorCodes.USER_DELETED,
+    message: 'The user was not found.',
   },
   {
     code: AuthErrorCodes.WEAK_PASSWORD,
-    message: 'Choose a stronger password, please.',
+    message: 'The password is weak.',
   },
 ];

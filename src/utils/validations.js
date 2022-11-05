@@ -1,5 +1,5 @@
 const EMPTY_CREDENTIALS = 'One or more fields are empty.';
-const SPACES_NOT_ALLOWED = "Passwords can't contain spaces.";
+const SPACES_NOT_ALLOWED = 'Passwords cannot contain spaces.';
 
 export const validateNotEmpty = (user) =>
   user.email == '' || user.password == '' ? EMPTY_CREDENTIALS : true;
