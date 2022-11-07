@@ -22,7 +22,7 @@ import {
 
 const SignCard = () => {
   const [user, setUser] = useState({ email: '', password: '' });
-  const [signUpMode, setSignUpMode] = useState(false);
+  const [signUpMode, setSignUpMode] = useState(true);
   const [signedUser, setSignedUser] = useState('');
 
   const handleInputChange = (e) => {
