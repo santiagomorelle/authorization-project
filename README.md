@@ -1,6 +1,6 @@
 <div align="center">
    <a href="https://github.com/santiagomorelle/auth-project/tree/dev">
-   <img alt='Logo' src="./public/logo.png" width='150px'/>
+   <img alt='Logo' src="./public/sign-up.png" width='150px'/>
    </a>
    <h3 align="center">Authorization Project</h3>
    <p align="center">
@@ -59,8 +59,8 @@ To get a local copy up and running follow these simple steps:
 
 - [X] Sign Up form with Firebase and custom validations.
 
-- [ ] Email Verification feature (in progress)
+- [X] Sign In form.
 
 - [ ] Unit Tests (in progress)
 
-- [ ] Sign In form (soon)
+
