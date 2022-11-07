@@ -9,14 +9,21 @@ import EmailField from './EmailField';
 import PasswordField from './PasswordField';
 import SignButton from './SignButton';
 import SignLink from './SignLink';
+import UserModal from './UserModal';
 
 import { validateCredentials } from '../utils/validations';
 
-import { firebaseSignUp, firebaseSignIn } from '../api/auth';
+import {
+  firebaseSignUp,
+  firebaseSignIn,
+  getCurrentUser,
+  firebaseSignOut,
+} from '../api/auth';
 
 const SignCard = () => {
   const [user, setUser] = useState({ email: '', password: '' });
   const [signUpMode, setSignUpMode] = useState(false);
+  const [signedUser, setSignedUser] = useState('');
 
   const handleInputChange = (e) => {
     setUser({
@@ -37,13 +44,21 @@ const SignCard = () => {
     response != undefined
       ? toast.error(response)
       : toast.success('Your account has been created!');
+    setUser({ email: '', password: '' });
   };
 
   const signIn = async () => {
     const response = await firebaseSignIn(user);
     response != undefined
       ? toast.error(response)
-      : toast.success('Signed in successfully!');
+      : toast.success('Signed in successfully!') &&
+        setSignedUser(getCurrentUser().email);
+    setUser({ email: '', password: '' });
+  };
+
+  const signOut = async () => {
+    await firebaseSignOut(user);
+    setSignedUser('');
   };
 
   return (
@@ -67,8 +82,11 @@ const SignCard = () => {
             rounded='lg'
           >
             <Stack spacing={4}>
-              <EmailField handleChange={handleInputChange} />
-              <PasswordField handleChange={handleInputChange} />
+              <EmailField handleChange={handleInputChange} value={user.email} />
+              <PasswordField
+                handleChange={handleInputChange}
+                value={user.password}
+              />
               <SignButton
                 handleSubmit={handleSubmit}
                 text={signUpMode ? 'Sign up' : 'Sign in'}
@@ -86,6 +104,7 @@ const SignCard = () => {
           </Box>
         </Stack>
       </Flex>
+      {signedUser != '' && <UserModal signOut={signOut} user={signedUser} />}
     </>
   );
 };

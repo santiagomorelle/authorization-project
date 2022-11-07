@@ -9,6 +9,7 @@ const EmailField = (props) => {
         onChange={(e) => props.handleChange(e)}
         placeholder='Your email address'
         type='email'
+        value={props.value}
       />
     </FormControl>
   );
