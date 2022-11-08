@@ -22,6 +22,6 @@ const firebaseErrors = [
   },
   {
     code: AuthErrorCodes.WEAK_PASSWORD,
-    message: 'The password is weak.',
+    message: 'The password does not meet the requirements.',
   },
 ];

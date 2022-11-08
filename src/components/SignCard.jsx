@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import toast, { Toaster } from 'react-hot-toast';
 
@@ -25,6 +25,10 @@ const SignCard = () => {
   const [signUpMode, setSignUpMode] = useState(true);
   const [signedUser, setSignedUser] = useState('');
 
+  useEffect(() => {
+    setUser({ email: '', password: '' });
+  }, [signUpMode, signedUser]);
+
   const handleInputChange = (e) => {
     setUser({
       ...user,
@@ -43,8 +47,8 @@ const SignCard = () => {
     const response = await firebaseSignUp(user);
     response != undefined
       ? toast.error(response)
-      : toast.success('Your account has been created!');
-    setUser({ email: '', password: '' });
+      : toast.success('Your account has been created!') &&
+        setUser({ email: '', password: '' });
   };
 
   const signIn = async () => {
@@ -53,7 +57,6 @@ const SignCard = () => {
       ? toast.error(response)
       : toast.success('Signed in successfully!') &&
         setSignedUser(getCurrentUser().email);
-    setUser({ email: '', password: '' });
   };
 
   const signOut = async () => {
