@@ -13,7 +13,7 @@
       <img alt='Vite' src="https://img.shields.io/badge/Vite-B73BFE?style=for-the-badge&logo=vite&logoColor=FFD62E" />
       <br />
       <br />
-      <a href="https://authorization-project.netlify.app">View Demo</a>
+      <a href="https://authorization-demo.netlify.app/">View Demo</a>
       ·
       <a href="mailto: santimorelle23@gmail.com">Report Bug</a>
    </p>
