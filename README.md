@@ -21,7 +21,7 @@
 
 ##
 
-<img alt='Sign Up' src="./src/assets/screenshots/sign-up.png" />
+<img alt='Sign Up' src="./public/assets/screenshots/sign-up.png" />
 
 ## Getting Started
 
