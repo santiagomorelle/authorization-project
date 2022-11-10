@@ -29,38 +29,63 @@ To get a local copy up and running follow these simple steps:
 
 ### Prerequisites
 
+1 - Firebase project
+
+  https://console.firebase.google.com/
+
+2 - NPM
+
   ```sh
   npm install npm@latest -g
   ```
 
 ### Installation
 
-1. Clone the repository.
+1 - Clone the repository.
 
    ```sh
-   git clone https://github.com/santiagomorelle/auth-project.git
+   git clone https://github.com/santiagomorelle/authorization-project.git
    ```
    
-2. Install NPM packages.
+2 - Install NPM packages.
 
    ```sh
    npm install
    ```
    
+3 - Create an `.env` file to store environment variables. 
+
+After creating your Firebase project:
+
+  - Go to Project Settings > General > SDK Setup and Configuration.
+  
+  - Copy the values from the `firebaseConfig` object.
+
+Your `.env` file should look like this: 
+
+```
+VITE_API_KEY = "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
+VITE_AUTH_DOMAIN = "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
+VITE_PROJECT_ID = "XXXXXXXXXXXXXXXXXXXXXXXXXXX"
+VITE_STORAGE_BUCKET = "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
+VITE_MESSAGING_SENDER_ID = "XXXXXXXXXXXX"
+VITE_APP_ID = "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
+```
+
 ### Usage
 
-- Run the app!
+Run the app! 👟
 
-   ```sh
-   npm run dev
-   ```
+```sh
+npm run dev
+```
  
 ## Features
 
-- [X] Sign Up form with Firebase and custom validations.
+- [X] Sign Up
 
-- [X] Sign In form.
+- [X] Firebase and Custom Validations
 
-- [ ] Unit Tests (in progress)
+- [X] Sign In
 
-
+- [X] Sign Out
