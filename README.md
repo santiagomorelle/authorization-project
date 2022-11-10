@@ -57,6 +57,8 @@ To get a local copy up and running follow these simple steps:
 
 After creating your Firebase project:
 
+  - Enable the _Email/Password_ sign-in provider in the Authentication page.
+
   - Go to Project Settings > General > SDK Setup and Configuration.
   
   - Copy the values from the `firebaseConfig` object.
