@@ -38,6 +38,7 @@ To get a local copy up and running follow these simple steps:
   ```sh
   npm install npm@latest -g
   ```
+##
 
 ### Installation
 
@@ -47,21 +48,27 @@ To get a local copy up and running follow these simple steps:
    git clone https://github.com/santiagomorelle/authorization-project.git
    ```
    
+<br>
+   
 2 - Install NPM packages.
 
    ```sh
    npm install
    ```
    
-3 - Create an `.env` file to store environment variables. 
+<br>
+   
+3 - Create an `.env` file to store environment variables.
 
-After creating your Firebase project:
+<br>
+
+After creating your Firebase project, go to https://console.firebase.google.com/ and...
 
   - Enable the _Email/Password_ sign-in provider in the Authentication page.
 
-  - Go to Project Settings > General > SDK Setup and Configuration.
-  
-  - Copy the values from the `firebaseConfig` object.
+  - Go to Project Settings > General > SDK Setup and Configuration and copy the values from the `firebaseConfig` object.
+
+<br>
 
 Your `.env` file should look like this: 
 
@@ -73,10 +80,11 @@ VITE_STORAGE_BUCKET = "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
 VITE_MESSAGING_SENDER_ID = "XXXXXXXXXXXX"
 VITE_APP_ID = "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
 ```
+##
 
 ### Usage
 
-Run the app! 👟
+Run the app!
 
 ```sh
 npm run dev
