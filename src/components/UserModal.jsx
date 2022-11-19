@@ -14,6 +14,8 @@ import {
 
 import { EmailIcon } from '@chakra-ui/icons';
 
+import { generateId } from '../utils/generators';
+
 import './UserModal.css';
 
 const UserModal = (props) => {
@@ -54,6 +56,7 @@ const UserModal = (props) => {
         <ModalFooter>
           <Button
             colorScheme='blue'
+            id={generateId('Feedback', 'button')}
             leftIcon={<EmailIcon />}
             mr={2}
             onClick={openMailApp}
@@ -61,7 +64,9 @@ const UserModal = (props) => {
           >
             Feedback
           </Button>
-          <Button onClick={signOut}>Sign out</Button>
+          <Button id={generateId('Sign out', 'button')} onClick={signOut}>
+            Sign out
+          </Button>
         </ModalFooter>
       </ModalContent>
     </Modal>
