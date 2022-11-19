@@ -12,6 +12,8 @@ import {
 
 import { ViewIcon, ViewOffIcon } from '@chakra-ui/icons';
 
+import { generateId } from '../utils/generators';
+
 const PasswordField = (props) => {
   const [showPassword, setShowPassword] = useState(false);
 
@@ -36,7 +38,9 @@ const PasswordField = (props) => {
           </Button>
         </InputRightElement>
       </InputGroup>
-      <Text as='sub'>Password must be at least 6 characters long.</Text>
+      <Text as='sub' id={generateId('Password Requirements', 'text')}>
+        Password must be at least 6 characters long.
+      </Text>
     </FormControl>
   );
 };

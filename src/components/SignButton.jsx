@@ -1,5 +1,7 @@
 import { Stack, Button } from '@chakra-ui/react';
 
+import { generateId } from '../utils/generators';
+
 const SignButton = (props) => {
   return (
     <Stack pt={2} spacing={10}>
@@ -9,6 +11,7 @@ const SignButton = (props) => {
         _hover={{
           bg: '#ca44f8fb',
         }}
+        id={generateId(props.text, 'button')}
         onClick={() => props.handleSubmit()}
         size='lg'
       >
