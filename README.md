@@ -100,5 +100,3 @@ npm run dev
 
 - [X] Sign Out
 
-- [ ] Axios (in progress)
-
